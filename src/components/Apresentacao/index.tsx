@@ -1,3 +1,4 @@
+import { Restaurantes } from '../../pages/Home'
 import { Container } from '../../styles'
 import {
   ContainerApresentacao,
@@ -6,12 +7,19 @@ import {
   Transparencia
 } from './styles'
 
-const Apresentacao = () => (
-  <ContainerApresentacao>
+const Apresentacao = ({
+  titulo,
+  tipo,
+  capa
+}: Omit<
+  Restaurantes,
+  'id' | 'destacado' | 'avaliacao' | 'descricao' | 'cardapio'
+>) => (
+  <ContainerApresentacao style={{ backgroundImage: `url(${capa})` }}>
     <Transparencia>
       <Container>
-        <TipoCulinaria>Italiana</TipoCulinaria>
-        <NomeRestaurante>La Dolce Vita Trattoria</NomeRestaurante>
+        <TipoCulinaria>{tipo}</TipoCulinaria>
+        <NomeRestaurante>{titulo}</NomeRestaurante>
       </Container>
     </Transparencia>
   </ContainerApresentacao>

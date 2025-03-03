@@ -1,5 +1,6 @@
 import {
   Cabecalho,
+  Capa,
   Card,
   Descricao,
   Nome,
@@ -18,8 +19,9 @@ type Props = {
   destaque: boolean
   culinaria: string
   nome: string
-  nota: string
+  nota: number
   descricao: string
+  id: number
 }
 
 const Restaurante = ({
@@ -28,10 +30,11 @@ const Restaurante = ({
   culinaria,
   nome,
   nota,
-  descricao
+  descricao,
+  id
 }: Props) => (
   <Card>
-    <img src={imagem} alt="restaurante" />
+    <Capa src={imagem} alt="restaurante" />
     {destaque && <TagDestaque>Destaque da semana</TagDestaque>}
     <Tag>{culinaria}</Tag>
     <Sobre>
@@ -44,7 +47,7 @@ const Restaurante = ({
       </Cabecalho>
       <Descricao>{descricao}</Descricao>
       <SaibaMaisBtn>
-        <Link to="/perfil">Saiba Mais</Link>
+        <Link to={`/perfil/${id}`}>Saiba Mais</Link>
       </SaibaMaisBtn>
     </Sobre>
   </Card>

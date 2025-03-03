@@ -11,6 +11,11 @@ export const Card = styled.div`
   position: relative;
 `
 
+export const Capa = styled.img`
+  width: 472px;
+  height: 217px;
+`
+
 export const Tag = styled.span`
   font-weight: 700;
   font-size: 12px;
@@ -69,6 +74,12 @@ export const Descricao = styled.p`
   font-size: 14px;
   line-height: 22px;
   margin: 16px 0;
+  height: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `
 
 export const SaibaMaisBtn = styled.button`

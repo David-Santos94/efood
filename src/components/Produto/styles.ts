@@ -10,6 +10,8 @@ export const CardProduto = styled.div`
 
 export const ImgProduto = styled.img`
   display: block;
+  width: 304px;
+  height: 167px;
 `
 
 export const NomeProduto = styled.h3`
@@ -26,6 +28,12 @@ export const DescricaoProduto = styled.p`
   line-height: 22px;
   color: ${cores.secundaria};
   text-align: start;
+  height: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `
 
 export const BotaoAdicionar = styled.button`
