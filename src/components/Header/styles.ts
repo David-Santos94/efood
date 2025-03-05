@@ -21,24 +21,28 @@ export const NavBar = styled(Container)`
 
   a {
     text-decoration: none;
-    font-weight: 900;
-    font-size: 18px;
-    text-align: center;
-    width: 109px;
-    color: ${cores.primaria};
-    grid-area: a;
   }
 `
+export const LinkHome = styled.span`
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  width: 109px;
+  color: ${cores.primaria};
+  grid-area: a;
+`
+
 export const LogoEfood = styled.img`
   width: 125px;
   height: 57.5px;
   grid-area: b;
 `
 
-export const ProdutosCarrinho = styled.span`
+export const ProdutosCarrinho = styled.a`
   font-weight: 900;
   font-size: 18px;
   text-align: end;
   width: 256px;
+  cursor: pointer;
   grid-area: c;
 `

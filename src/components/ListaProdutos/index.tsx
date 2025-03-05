@@ -1,4 +1,4 @@
-import { Container } from '../../styles'
+import { Container, Overlay } from '../../styles'
 import Produto from '../Produto'
 import {
   Adicionar,
@@ -10,14 +10,16 @@ import {
   Modal,
   ModalBox,
   ModalContent,
-  NomeProdutoModal,
-  Overlay
+  NomeProdutoModal
 } from './styles'
 import fechar from '../../assets/images/close_modal.png'
 import { useState } from 'react'
 import { Restaurantes } from '../../pages/Home'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/carrinho'
 
-type ModalState = {
+export type ModalState = {
+  id: number
   imagem: string
   nome: string
   descricao: string
@@ -33,6 +35,7 @@ const ListaProdutos = ({
   'id' | 'titulo' | 'destacado' | 'tipo' | 'avaliacao' | 'descricao' | 'capa'
 >) => {
   const [modal, setModal] = useState<ModalState>({
+    id: 0,
     imagem: '',
     nome: '',
     descricao: '',
@@ -40,6 +43,13 @@ const ListaProdutos = ({
     preco: 0,
     visivel: false
   })
+
+  const dispatch = useDispatch()
+
+  const adicionarAoCarrinho = () => {
+    dispatch(add(modal))
+    dispatch(open())
+  }
 
   return (
     <Container>
@@ -49,6 +59,7 @@ const ListaProdutos = ({
             <Adicionar
               onClick={() => {
                 setModal({
+                  id: cardapio.id,
                   imagem: cardapio.foto,
                   nome: cardapio.nome,
                   descricao: cardapio.descricao,
@@ -73,6 +84,7 @@ const ListaProdutos = ({
           <CloseModal
             onClick={() => {
               setModal({
+                id: 0,
                 imagem: '',
                 nome: '',
                 descricao: '',
@@ -92,7 +104,20 @@ const ListaProdutos = ({
               <br />
               <br /> Serve: {modal.serve}
             </DescricaoProdutoModal>
-            <BotaoAdicionarModal>
+            <BotaoAdicionarModal
+              onClick={() => {
+                adicionarAoCarrinho()
+                setModal({
+                  id: 0,
+                  imagem: '',
+                  nome: '',
+                  descricao: '',
+                  serve: '',
+                  preco: 0,
+                  visivel: false
+                })
+              }}
+            >
               Adicionar ao carrinho - R$ {modal.preco}
             </BotaoAdicionarModal>
           </ModalContent>

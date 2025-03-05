@@ -25,6 +25,10 @@ const Perfil = () => {
       .then((res) => setPerfil(res))
   }, [id])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <Header />
