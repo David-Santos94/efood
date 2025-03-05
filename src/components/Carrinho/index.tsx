@@ -44,7 +44,9 @@ const Carrinho = () => {
           <ProdutoCarrinho key={item.id}>
             <ImgProdutoCarrinho src={item.imagem} alt="foto produto" />
             <TituloProdutoCarrinho>{item.nome}</TituloProdutoCarrinho>
-            <PrecoProdutoCarrinho>R$ {item.preco}</PrecoProdutoCarrinho>
+            <PrecoProdutoCarrinho>
+              R$ {item.preco.toFixed(2)}
+            </PrecoProdutoCarrinho>
             <Deletar
               onClick={() => {
                 removerDoCarrinho(item.id)

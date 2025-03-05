@@ -118,7 +118,7 @@ const ListaProdutos = ({
                 })
               }}
             >
-              Adicionar ao carrinho - R$ {modal.preco}
+              Adicionar ao carrinho - R$ {modal.preco.toFixed(2)}
             </BotaoAdicionarModal>
           </ModalContent>
         </ModalBox>
