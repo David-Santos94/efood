@@ -1,4 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
+import logo from '../../assets/images/logo.png'
+
+import { open } from '../../store/reducers/carrinho'
+import { RootReducer } from '../../store'
+
 import {
   NavBar,
   ContainerHeader,
@@ -6,10 +13,6 @@ import {
   LogoEfood,
   LinkHome
 } from './styles'
-import logo from '../../assets/images/logo.png'
-import { open } from '../../store/reducers/carrinho'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
 
 const Header = () => {
   const dispatch = useDispatch()

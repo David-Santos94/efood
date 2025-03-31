@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom'
+
+import estrela from '../../assets/images/estrela.png'
+
 import {
   Cabecalho,
   Capa,
@@ -11,8 +15,6 @@ import {
   TagDestaque,
   Valor
 } from './styles'
-import estrela from '../../assets/images/estrela.png'
-import { Link } from 'react-router-dom'
 
 type Props = {
   imagem: string

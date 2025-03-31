@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 import logo from '../../assets/images/logo.png'
 import instagram from '../../assets/images/instagram.png'
 import facebook from '../../assets/images/facebook.png'
 import twitter from '../../assets/images/twitter.png'
-import { Link } from 'react-router-dom'
+
 import { Aviso, ContainerFooter, RedeSocial } from './styles'
 
 const Footer = () => (

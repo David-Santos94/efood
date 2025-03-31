@@ -1,9 +1,10 @@
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
 import Header from '../../components/Header'
 import Apresentacao from '../../components/Apresentacao'
 import ListaProdutos from '../../components/ListaProdutos'
-import { useParams } from 'react-router-dom'
 import { Restaurantes } from '../Home'
-import { useEffect, useState } from 'react'
 
 const Perfil = () => {
   const { id } = useParams()

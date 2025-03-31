@@ -4,6 +4,7 @@ export const cores = {
   primaria: '#E66767',
   secundaria: '#FFEBD9',
   terciaria: '#FFFFFF',
+  quaternaria: '#4B4B4B',
   bgcolor: '#FFF8F2',
   bgcolor2: '#FFFFFF',
   bgcolor3: '#FFEBD9',

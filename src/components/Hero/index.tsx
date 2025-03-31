@@ -1,6 +1,8 @@
-import { ContainerHero, Slogan } from './styles'
-import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
+
+import logo from '../../assets/images/logo.png'
+
+import { ContainerHero, Slogan } from './styles'
 
 const Hero = () => (
   <ContainerHero>

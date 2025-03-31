@@ -1,5 +1,14 @@
-import { Container, Overlay } from '../../styles'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
 import Produto from '../Produto'
+import { Restaurantes } from '../../pages/Home'
+
+import fechar from '../../assets/images/close_modal.png'
+
+import { add, open } from '../../store/reducers/carrinho'
+
+import { Container, Overlay } from '../../styles'
 import {
   Adicionar,
   BotaoAdicionarModal,
@@ -12,11 +21,6 @@ import {
   ModalContent,
   NomeProdutoModal
 } from './styles'
-import fechar from '../../assets/images/close_modal.png'
-import { useState } from 'react'
-import { Restaurantes } from '../../pages/Home'
-import { useDispatch } from 'react-redux'
-import { add, open } from '../../store/reducers/carrinho'
 
 export type ModalState = {
   id: number
